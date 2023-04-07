@@ -14,10 +14,10 @@ const Navbar = () => {
 
     <div class="wrapper">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Canvases</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#canvas">Canvases</a></li>
+                    <li><a href="#foter">Contact</a></li>
                 </ul>
     </div>
 
