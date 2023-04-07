@@ -1,9 +1,7 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
-    font-family: 'Oswald', sans-serif;
+
+  .app__navbar
+  {
+    z-index: 9999;
   }
   .wrapper{
     position: fixed;

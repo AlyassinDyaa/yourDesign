@@ -1,6 +1,8 @@
 import React  from 'react'
 
 import NAV from "./nav/Nav"
+import SOCIAL from "./social/social"
+
 import HEAD from "./components/Header/header"
 import ABOUT from "./components/About/about"
 import CANVAS from "./components/Canvas/canvas"
@@ -10,6 +12,7 @@ const App = () => {
   return (
     <>
         <NAV/>
+        <SOCIAL/>
         <HEAD/>
         <ABOUT/>
         <CANVAS/>
