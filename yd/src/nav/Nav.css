@@ -1,8 +1,4 @@
 
-  .app__navbar
-  {
-    z-index: 9999;
-  }
   .wrapper{
     position: fixed;
     top: 0;
@@ -16,14 +12,15 @@
     /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
    /* background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%);*/
     transition: all 0.6s ease-in-out;
+    z-index: 2;
   }
   #active:checked ~ .wrapper{
     /*left: 0;*/
     right:0;
   }
   .menu-btn{
-    position: absolute;
-    z-index: 2;
+    position: fixed;
+    z-index: 3;
     right: 20px;
     /*left: 20px; */
     top: 20px;
