@@ -1,0 +1,8 @@
+
+.container__header
+{
+    min-height: 120vh;
+    background-image: url("../../assets/headerBackground.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
