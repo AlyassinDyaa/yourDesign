@@ -3,7 +3,10 @@ import "./about.css"
 
 const about = () => {
   return (
-    <div className='container__about' id='about'>
+    <div className='container__about
+    {
+        min-height: 120vh;
+    }'>
       About
     </div>
   )

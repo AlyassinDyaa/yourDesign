@@ -3,7 +3,7 @@ import "./footer.css"
 
 const footer = () => {
   return (
-    <div id='footer'>
+    <div>
       Footer
     </div>
   )

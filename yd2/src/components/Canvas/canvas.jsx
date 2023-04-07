@@ -3,7 +3,7 @@ import "./canvas.css"
 
 const canvas = () => {
   return (
-    <div id='canvas'>
+    <div>
       Canvases
     </div>
   )
