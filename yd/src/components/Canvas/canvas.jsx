@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import './canvas.css';
+import { motion } from 'framer-motion';
 import C1 from "../../assets/products/c1.jpg"
 import C1H from "../../assets/products/c11.jpg"
 import C2 from "../../assets/products/c2.jpg"
 import C2H from "../../assets/products/c22.jpg"
 
 const Canvas = () => {
+  const [searchValue, setSearchValue] = useState('');
+
   const [products, setProducts] = useState([
     {
       id: 1,
@@ -25,8 +28,13 @@ const Canvas = () => {
       hoverImage: C2H,
       isHovered: false
     },
- 
   ]);
+
+  const filteredProducts = searchValue
+    ? products.filter((product) =>
+        product.name.toLowerCase().includes(searchValue.toLowerCase())
+      )
+    : products;
 
   const handleHover = (id) => {
     const updatedProducts = products.map((product) => {
@@ -62,9 +70,23 @@ const Canvas = () => {
   return (
     <div id='canvas' className='container__canvas'>
       <h1 className='container__canvas-title'>OUR COLLECTION</h1>
+
+      <motion.div 
+        className='search-bar'
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5 }}
+      >
+        <input 
+          type="text" 
+          placeholder="Search..." 
+          value={searchValue} 
+          onChange={(e) => setSearchValue(e.target.value)} 
+        />
+      </motion.div>
+
       <div className='card__container'>
-       
-        {products.map((product) => (
+        {filteredProducts.length > 0 ? filteredProducts.map((product) => (
           <div
             key={product.id}
             className='card'
@@ -83,11 +105,16 @@ const Canvas = () => {
               <button className='btn-canvas' onClick={() => handleEmailButtonClick(product)}>Contact</button>
             </div>
           </div>
-        ))}
+        )) : (
+          <div className='card'>
+            <img className='card__image' src={require('../../assets/placeholder.jpg').default} alt='No Results' />
+            <div className='card__content'>
+              <h2 className='card__title'>No Results</h2>
+            </div>
+          </div>
+        )}
       </div>
     </div>
-  );
-  
-};
+    )}
 
 export default Canvas;
