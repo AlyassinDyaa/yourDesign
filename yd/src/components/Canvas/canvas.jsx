@@ -67,11 +67,13 @@ const Canvas = () => {
     window.location.href = mailtoLink;
   };
 
+  
+
   return (
     <div id='canvas' className='container__canvas'>
       <h1 className='container__canvas-title'>OUR COLLECTION</h1>
 
-      <motion.div 
+        <motion.div 
         className='search-bar'
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -85,34 +87,36 @@ const Canvas = () => {
         />
       </motion.div>
 
-      <div className='card__container'>
-        {filteredProducts.length > 0 ? filteredProducts.map((product) => (
-          <div
-            key={product.id}
-            className='card'
-            onMouseEnter={() => handleHover(product.id)}
-            onMouseLeave={handleMouseLeave}
-          >
-            <img
-              className='card__image'
-              src={product.isHovered ? product.hoverImage : product.image}
-              alt={product.name}
-            />
-            <div className='card__content'>
-              <h2 className='card__title'>{product.name}</h2>
-              <p className='card__subtitle'>{product.subtitle}</p>
-              <p className='card__price'>{product.price}</p>
-              <button className='btn-canvas' onClick={() => handleEmailButtonClick(product)}>Contact</button>
+      <div className='card_wrapper'>
+        <div className='card__container'>
+          {filteredProducts.length > 0 ? filteredProducts.map((product) => (
+            <div
+              key={product.id}
+              className='card'
+              onMouseEnter={() => handleHover(product.id)}
+              onMouseLeave={handleMouseLeave}
+            >
+              <img
+                className='card__image'
+                src={product.isHovered ? product.hoverImage : product.image}
+                alt={product.name}
+              />
+              <div className='card__content'>
+                <h2 className='card__title'>{product.name}</h2>
+                <p className='card__subtitle'>{product.subtitle}</p>
+                <p className='card__price'>{product.price}</p>
+                <button className='btn-canvas' onClick={() => handleEmailButtonClick(product)}>Contact</button>
+              </div>
             </div>
-          </div>
-        )) : (
-          <div className='card'>
-            <img className='card__image' src={require('../../assets/placeholder.jpg').default} alt='No Results' />
-            <div className='card__content'>
-              <h2 className='card__title'>No Results</h2>
+          )) : (
+            <div className='card'>
+              <img className='card__image' src={require('../../assets/placeholder.jpg').default} alt='No Results' />
+              <div className='card__content'>
+                <h2 className='card__title'>No Results</h2>
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
     )}
