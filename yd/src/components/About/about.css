@@ -1,5 +1,41 @@
+
 .container__about
 {
     min-height: 40vh;
-    background-color: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-left: 20rem;
+    padding-right: 20rem;
+    background-color: #f5f5f5;  
+
 }
+
+.container__about-header {
+    margin-bottom: 2rem;
+  }
+  
+  .container__about-header_title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    margin-top: 4rem;
+    font-family: 'Cormorant Garamond', serif;;
+  }
+  
+  .container__about-header_subTitle {
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
+    font-family: 'Cormorant Garamond', serif;;
+  }
+  
+  .container__about-paragraph {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }

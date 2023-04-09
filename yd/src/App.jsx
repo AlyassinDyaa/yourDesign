@@ -6,6 +6,7 @@ import SOCIAL from "./social/social"
 import HEAD from "./components/Header/header"
 import ABOUT from "./components/About/about"
 import CANVAS from "./components/Canvas/canvas"
+import CONTACT from "./components/Contact/contact"
 import FOOTER from "./components/Footer/footer"
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
         <HEAD/>
         <ABOUT/>
         <CANVAS/>
+        <CONTACT/>
         <FOOTER/>
     </>
    
